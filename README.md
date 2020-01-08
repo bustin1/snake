@@ -1,15 +1,15 @@
-# snake
+# Snake
+It's basically the snake you used to see on youtube loading screens or the fancy google pages.\
+![]
 
-It's basically the snake you used to see on youtube loading screens or the fancy google pages.  
+# Requirements
+Download SDL2 [here](https://www.libsdl.org/).\
 
-# REQS
-
-Download SDL2 here -> https://www.libsdl.org/. This library is used for my 2D graphics.  
-C++ compiler - I used visual studio to run my code
+# Rules
+Eat the blue squares to get 10 points, avoid hitting yourself and the walls.
+If you score top 10, type your name, 
 
 # CONTROLS
-arrow keys as usual  
-p to pause  
-ESC to exit  
-
-# Video here
+- **arrow keys** (up,left,down,right)
+- **p** pause
+- **ESC** to exit conosle  
