@@ -14,7 +14,7 @@ Download and install SDL2 [here](https://www.libsdl.org/).
 Eat the blue squares to get 10 points, avoid hitting yourself and the walls.
 If you score top 10, type your name **WITHOUT SPACES PLEASE**
 
-# CONTROLS
+# Controls
 - **arrow keys** (up,left,down,right)
 - **p** pause
 - **ESC** to exit conosle  
