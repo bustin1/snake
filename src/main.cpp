@@ -59,7 +59,7 @@ int main(int argc, char* argv[]) {
 
 	//records file
 	std::ifstream infile;
-	std::string fileName = "SnakeAllTime.txt";
+	std::string fileName = "path/to/SnakeAllTime.txt";
 	infile.open(fileName);
 
 	//list of all the top scorers
