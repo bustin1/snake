@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SDL.h>
+#include <vector>
 #include "Window.h"
 #include "Food.h"
 
@@ -15,8 +16,8 @@ public:
 	void init();
 	bool hitWall();
 	bool hitSelf(int);
-	int x[NUM_OF_SQUARES];
-	int y[NUM_OF_SQUARES];
+  std::vector<short> x;
+  std::vector<short> y;
 	int getScore();
 	inline bool isDead() { return dead; };
 
@@ -24,8 +25,8 @@ private:
 	SDL_Rect rect;
 	Food food;
 
-	int direction[NUM_OF_SQUARES];
-	int turn[NUM_IN_ROW][NUM_IN_COL];
+  std::vector<char> direction;
+	char turn[NUM_IN_ROW][NUM_IN_COL];
 	int w = SIZE, h = SIZE;
 	int r, g, b, a;
 	int length = 1;

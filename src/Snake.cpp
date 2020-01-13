@@ -39,12 +39,13 @@ Snake::~Snake() {
 void Snake::init() {
 
 	//initalize each snakes body parts direction(-1 means not moving)
-	for (int i = 0; i < NUM_OF_SQUARES; i++) {
-		direction[i] = -1;
-		x[i] = 0;
-		y[i] = 0;
-		turn[(int)i / 30][i % 30] = -1;
-	}
+  direction.push_back(-1);
+  x.push_back(0);
+  y.push_back(0);
+  for(int i=0; i<NUM_OF_SQUARES; i++)
+  {
+	  turn[i / 30][i % 30] = -1;
+  }
 
 	//initialize snake
 	rect = { 0, 0, w, h };
@@ -64,7 +65,7 @@ void Snake::draw() {
 			turn[x[0] / SIZE][y[0] / SIZE] = direction[0];
 		}
 	}
-	for (int i = 0; i < length; i++) {
+	for (char i = 0; i < length; i++) {
 		if (x[i] % SIZE == 0 && y[i] % SIZE == 0) {
 			if (turn[x[i] / SIZE][y[i] / SIZE] != -1) {
 				direction[i] = turn[x[i] / SIZE][y[i] / SIZE];
@@ -132,20 +133,20 @@ bool Snake::hitSelf(int i) {
 void Snake::addLength() {
 	direction[length] = direction[length - 1];
 	if (direction[length-1] == 0) {
-		x[length] = x[length - 1] + SIZE;
-		y[length] = y[length - 1];
+		x.push_back(x[length - 1] + SIZE);
+		y.push_back(y[length - 1]);
 	}
 	else if (direction[length-1] == 1) {
-		x[length] = x[length - 1] - SIZE;
-		y[length] = y[length - 1];
+		x.push_back(x[length - 1] - SIZE);
+		y.push_back(y[length - 1]);
 	}
 	else if (direction[length-1] == 2) {
-		x[length] = x[length - 1];
-		y[length] = y[length - 1] + SIZE;
+		x.push_back(x[length - 1]);
+		y.push_back(y[length - 1] + SIZE);
 	}
 	else if (direction[length-1] == 3) {
-		x[length] = x[length - 1];
-		y[length] = y[length - 1] - SIZE;
+		x.push_back(x[length - 1]);
+		y.push_back(y[length - 1] - SIZE);
 	}
 	length++;
 }

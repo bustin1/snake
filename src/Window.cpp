@@ -54,7 +54,11 @@ bool Window::initWindow() {
 	}
 
 	TTF_Init();
-	font = TTF_OpenFont("arial.ttf", 24);
+	font = TTF_OpenFont("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 24);
+  if(font == NULL){
+    std::cout << "font failed\n";
+    return false;
+  }
 	color = { 255, 50, 50 };
 	SDL_Surface* textSurface = TTF_RenderText_Solid(font, "SCORE: 0", color);
 	textTexture = SDL_CreateTextureFromSurface(renderer, textSurface); 
