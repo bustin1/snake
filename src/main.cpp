@@ -68,6 +68,7 @@ int main(int argc, char* argv[]) {
 	//highest scorest name
 	std::string name = data[0].substr(0, data[0].find(" "));
 	std::string score = data[0].substr(data[0].find(" ") + 1);
+	std::cout << "success in opening file\n";
 	if (name == "") {
 		std::cout << "You're the first to play!!\n";
 		data.pop_back();
@@ -76,12 +77,13 @@ int main(int argc, char* argv[]) {
 		std::cout << name << " is on top with a score of " << score << std::endl;
 	}
 	std::cout << "To be on the leaderboard, you must get top 10\n";
-	
+
 	/*prints the other people who scored
 	well in the past*/
 	for (int i = 0; i < (int)data.size(); i++) {
 		std::cout << i+1 << ": " << data[i] << std::endl;
 	}
+	
 
 	/*all these are considered objects*/
 	Window window("First Window");//the window
@@ -97,7 +99,7 @@ int main(int argc, char* argv[]) {
 		if (t.end1() > 2) {//change this value for speed
 			pollEvents(window, snake);
 			if (!window.paused) {
-				if (window.countdown) {//make sure whene pausing you get time to get ready
+				if (window.countdown) {//make sure when pausing you get time to get ready
 					window.countDown((int)((5000-window.t.end1())/1000));
 					if (window.t.end1() > 5000) {
 						window.countdown = false;

@@ -6,7 +6,7 @@ CC=g++
 #--cflags necessary compilier flags to compile a cpp program
 LDFLAGS=`sdl2-config --libs --cflags` -lSDL2_ttf -lSDL2_image -lm
 SRC=*.cpp
-EXEC=snake
+EXEC=main
 
 all: $(EXEC)
   
